@@ -11,5 +11,5 @@ A MLJ wrapper to the R [HAL](https://github.com/tlverse/hal9001) package.
 ## Installation
 
 ```julia
-add 
+add "https://github.com/olivierlabayle/HighlyAdaptiveLasso.jl"
 ```
