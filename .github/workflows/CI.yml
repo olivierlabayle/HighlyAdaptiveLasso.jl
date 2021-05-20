@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        R: ['3.6.3']
+        R: ['4.0.5']
         version:
           - '1'
         os:
@@ -22,6 +22,7 @@ jobs:
         uses: r-lib/actions/setup-r@v1
         with:
           r-version: ${{ matrix.R }}
+      - run: echo "$(R RHOME)"
       - uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.version }}
@@ -38,7 +39,7 @@ jobs:
             ${{ runner.os }}-
       - uses: julia-actions/julia-buildpkg@v1
         env: 
-          R_HOME: "/opt/R/3.6.3/lib/R"
+          R_HOME: "/opt/R/4.0.5/lib/R"
       - uses: julia-actions/julia-runtest@v1
       - uses: julia-actions/julia-processcoverage@v1
       - uses: codecov/codecov-action@v1
