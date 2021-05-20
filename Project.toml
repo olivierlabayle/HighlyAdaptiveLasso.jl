@@ -1,0 +1,13 @@
+name = "HighlyAdaptiveLasso"
+uuid = "c5dac772-1445-43c4-b698-9440de7877f6"
+authors = ["Olivier Labayle"]
+version = "0.1.0"
+
+[compat]
+julia = "1.1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
