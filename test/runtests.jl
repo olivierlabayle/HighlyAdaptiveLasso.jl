@@ -1,6 +1,9 @@
 using HighlyAdaptiveLasso
 using Test
+using RCall
 
 @testset "HighlyAdaptiveLasso.jl" begin
-    # Write your tests here.
+
+    @test R"library(hal9001)" isa RObject
+    
 end
