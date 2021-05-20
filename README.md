@@ -14,7 +14,7 @@ A MLJ wrapper to the R [HAL](https://github.com/tlverse/hal9001) package.
 
 The project relies on [RCall](https://juliainterop.github.io/RCall.jl/stable/installation/), you should make sure the `R_HOME` environment 
 variable is correctly set as described at the previous address. 
-I suggest setting `ENV["R_HOME"] = "*"` which will default to using [Conda.jl](https://github.com/JuliaPy/Conda.jl)
+I suggest **not** using the `ENV["R_HOME"] = "*"` which will default to using [Conda.jl](https://github.com/JuliaPy/Conda.jl) as I got into trouble with it.
 
 Then simply run:
 
