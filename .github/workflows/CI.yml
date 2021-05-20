@@ -37,6 +37,8 @@ jobs:
             ${{ runner.os }}-test-${{ env.cache-name }}-
             ${{ runner.os }}-test-
             ${{ runner.os }}-
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - uses: julia-actions/julia-buildpkg@v1
         env: 
           R_HOME: "/opt/R/4.0.5/lib/R"
