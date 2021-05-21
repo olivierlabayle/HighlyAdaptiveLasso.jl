@@ -16,7 +16,7 @@ jobs:
           - '1'
         os:
           # - macos-latest
-          - ubuntu-latest
+          - ubuntu-18
           # - windows-latest
         arch:
           - x64
@@ -42,8 +42,8 @@ jobs:
             ${{ runner.os }}-
       - name: Set R_HOME value
         run: echo "R_HOME=$(R RHOME)" >> $GITHUB_ENV
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
       - uses: julia-actions/julia-buildpkg@v1
         # env:
         #   R_HOME: "/Library/Frameworks/R.framework/Resources"
