@@ -1,8 +1,11 @@
-using HighlyAdaptiveLasso: HALRegressor
+using HighlyAdaptiveLasso
 using Test
+using Random
 using MLJBase
 
+
 @testset "HighlyAdaptiveLasso.jl" begin
+    Random.seed!(1234)
     # Those are sanity checks as the original package is already well tested
     n = 100
     p = 3
@@ -35,4 +38,6 @@ using MLJBase
     avg_mse = mean((y .- mean(y)).^2)
     @test mse < avg_mse
     
+    # Checking evaluation
+    res = evaluate!(mach, resampling=CV(), measure=rmse, verbosity=0)
 end
