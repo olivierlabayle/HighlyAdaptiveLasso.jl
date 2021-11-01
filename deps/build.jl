@@ -1,6 +1,7 @@
 using RCall
 
 R"""
-packageUrl <- 'https://cran.r-project.org/src/contrib/hal9001_0.4.1.tar.gz'
-install.packages(packageUrl, repos=NULL, type='source')
+install.packages('devtools', repos='http://cran.us.r-project.org')
+require(devtools)
+install_version("hal9001", version = "0.4.1", repos = "http://cran.us.r-project.org")
 """
