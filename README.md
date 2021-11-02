@@ -30,8 +30,8 @@ using HighlyAdaptiveLasso, MLJ, Random
 X = randn(100, 4)
 y = randn(100)
 
-model = HAL()
-mach = machine(HALRegressor, X, y)
+hal = HALRegressor()
+mach = machine(hal, X, y)
 
 evaluate!(mach)
 
