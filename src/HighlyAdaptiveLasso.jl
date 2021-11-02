@@ -93,41 +93,41 @@ function MLJModelInterface.fit(m::HAL, verbosity::Int, Xt, yt)
     # I can't make dynamical assignement of variables work
     # So I rely on this ugly iteraction over variables
     # to build the string for RCall
-    fitstring = "fit_hal(X = X, Y = y, family='$(m.family)'"
+    fitstring = "fit_hal(X, y, family = '$(m.family)'"
     if m.formula !== nothing
         R"formula <- $(m.formula)"
-        fitstring *= ", formula=formula"
+        fitstring *= ", formula = formula"
     end
     if m.max_degree !== nothing
         R"max_degree <- $(m.max_degree)"
-        fitstring *= ", max_degree=max_degree"
+        fitstring *= ", max_degree = max_degree"
     end
     if m.smoothness_orders !== nothing
         R"smoothness_orders <- $(m.smoothness_orders)"
-        fitstring *= ", smoothness_orders=smoothness_orders"
+        fitstring *= ", smoothness_orders = smoothness_orders"
     end
     if m.num_knots !== nothing
         R"num_knots <- $(m.num_knots)"
-        fitstring *= ", num_knots=num_knots"
+        fitstring *= ", num_knots = num_knots"
     end
     if m.reduce_basis !== nothing
         R"reduce_basis <- $(m.reduce_basis)"
-        fitstring *= ", reduce_basis=reduce_basis"
+        fitstring *= ", reduce_basis = reduce_basis"
     end
     if m.lambda !== nothing
         R"lambda <- $(m.lambda)"
-        fitstring *= ", lambda=lambda"
+        fitstring *= ", lambda = lambda"
     end
     # Fit control string
     if m.cv_select !== nothing || m.n_folds !== nothing
         fitstring *= ", fit_control = list("
         if m.cv_select !== nothing
             R"cv_select <- $(m.cv_select)"
-            fitstring *= "cv_select=cv_select, "
+            fitstring *= "cv_select = cv_select, "
         end
         if m.n_folds !== nothing
             R"n_folds <- $(m.n_folds)"
-            fitstring *= "n_folds=n_folds, "
+            fitstring *= "n_folds = n_folds, "
         end
         fitstring = fitstring[1:end - 2] * ")"
     end

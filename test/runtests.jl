@@ -23,7 +23,7 @@ using RCall
     @test n_folds == 3
 
     @test mach.report ==
-        "fit_hal(X = X, Y = y, family='gaussian', fit_control = list(cv_select=cv_select, n_folds=n_folds))"
+        "fit_hal(X, y, family = 'gaussian', fit_control = list(cv_select = cv_select, n_folds = n_folds))"
 
 
     # Test specifying a lambda
@@ -44,8 +44,8 @@ using RCall
     @test num_knots == [100, 50, 20]
 
     @test mach.report ==
-        "fit_hal(X = X, Y = y, family='gaussian', max_degree=max_degree, smoothness_orders=smoothness_orders, "*
-        "num_knots=num_knots, lambda=lambda, fit_control = list(cv_select=cv_select))"
+        "fit_hal(X, y, family = 'gaussian', max_degree = max_degree, smoothness_orders = smoothness_orders, "*
+        "num_knots = num_knots, lambda = lambda, fit_control = list(cv_select = cv_select))"
 
     # Test specifying a formula
     formula_ = "~h(x1) + h(x2, x1) + h(x3)"
@@ -59,7 +59,7 @@ using RCall
     @test formula == formula_
 
     @test mach.report ==
-        "fit_hal(X = X, Y = y, family='gaussian', formula=formula, lambda=lambda, fit_control = list(cv_select=cv_select))"
+        "fit_hal(X, y, family = 'gaussian', formula = formula, lambda = lambda, fit_control = list(cv_select = cv_select))"
 
 end
 
@@ -78,6 +78,6 @@ end
     @test mach.state == 1
     @test predict(mach, Xt) isa UnivariateFiniteVector
 
-    @test mach.report == "fit_hal(X = X, Y = y, family='binomial')"
+    @test mach.report == "fit_hal(X, y, family = 'binomial')"
 
 end
