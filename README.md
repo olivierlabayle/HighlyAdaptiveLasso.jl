@@ -31,7 +31,7 @@ X = randn(100, 4)
 y = randn(100)
 
 model = HAL()
-mach = machine(HAL, X, y)
+mach = machine(HALRegressor, X, y)
 
 evaluate!(mach)
 
