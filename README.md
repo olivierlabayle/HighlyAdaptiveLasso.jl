@@ -12,13 +12,14 @@ A MLJ wrapper to the R [HAL](https://github.com/tlverse/hal9001) package.
 ## Installation
 
 
-The project relies on [RCall](https://juliainterop.github.io/RCall.jl/stable/installation/), if you don't want to fallback on a Conda installation,
-you should make sure the `R_HOME` environment variable is correctly set. For known issues regarding RCall compatibility look into the RCall intallation section.
+The project relies on [RCall](https://juliainterop.github.io/RCall.jl/stable/installation/), if you don't want to fallback on a Conda installation, you should make sure the `R_HOME` environment variable is correctly set. For known issues regarding RCall compatibility look into the RCall intallation section.
 
-Then simply run:
+You will also need to install the original [HAL package](https://github.com/tlverse/hal9001) in your R environment.
+
+This wrapper can then be installed via:
 
 ```julia
-add "https://github.com/olivierlabayle/HighlyAdaptiveLasso.jl"
+add HighlyAdaptiveLasso
 ```
 
 ## Usage
