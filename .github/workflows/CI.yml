@@ -15,6 +15,8 @@ jobs:
           - '1'
         os:
           - macos-latest
+          - ubuntu-latest
+          - windows-latest
         arch:
           - x64
     steps:
